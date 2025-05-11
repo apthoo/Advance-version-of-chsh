@@ -12,7 +12,7 @@ if grep -q "^$name" /etc/passwd; then
         choice=$(echo "$choice" | tr '[:upper:]' '[:lower:]')
         if [[ "$choice" == "y" ]]; then
                 read -p "Enter the shell name: " shell
-                echo "enter the sudo password for the changes"
+                echo "Enter the sudo password for the changes"
                 sudo usermod -s "$shell" "$name"
                 echo "shell updated for '$name'."
                 grep "$name" /etc/passwd
